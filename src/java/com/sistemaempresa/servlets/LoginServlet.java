@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         
         if (usuario == null || password == null || usuario.trim().isEmpty() || password.trim().isEmpty()) {
-            response.sendRedirect("index.html?error=Datos incompletos");
+            response.sendRedirect("index.jsp?error=Datos incompletos");
             return;
         }
         
@@ -50,12 +50,12 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("DashboardServlet");
                 
             } else {
-                response.sendRedirect("index.html?error=Credenciales incorrectas");
+                response.sendRedirect("index.jsp?error=Credenciales incorrectas");
             }
             
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("index.html?error=Error del sistema");
+            response.sendRedirect("index.jsp?error=Error del sistema");
         }
     }
     

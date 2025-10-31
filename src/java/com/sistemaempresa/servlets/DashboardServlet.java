@@ -35,7 +35,7 @@ public class DashboardServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("usuario") == null) {
-            response.sendRedirect("index.html");
+            response.sendRedirect("index.jsp");
             return;
         }
 

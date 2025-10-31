@@ -58,7 +58,7 @@ public class JWTAuthFilter implements Filter {
             chain.doFilter(request, response);
         } else {
             // Token inválido o no presente, redirigir al login
-            httpResponse.sendRedirect(contextPath + "/index.html");
+            httpResponse.sendRedirect(contextPath + "/index.jsp");
         }
     }
     
@@ -77,7 +77,7 @@ public class JWTAuthFilter implements Filter {
         String path = requestURI.substring(contextPath.length());
         
         return path.equals("/") ||
-               path.equals("/index.html") ||
+               path.equals("/index.jsp") ||
                path.equals("/LoginServlet") ||
                path.startsWith("/css/") ||
                path.startsWith("/js/") ||

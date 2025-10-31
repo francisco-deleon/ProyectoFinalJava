@@ -15,8 +15,8 @@ public class AuthenticationFilter implements Filter {
     
     // Rutas que no requieren autenticación
     private static final List<String> PUBLIC_PATHS = Arrays.asList(
-        "/index.html",
-        "/login.html",
+        "/index.jsp",
+        "/login.jsp",
         "/LoginServlet",
         "/css/",
         "/js/",
@@ -50,7 +50,7 @@ public class AuthenticationFilter implements Filter {
         
         if (session == null || session.getAttribute("usuario") == null) {
             // Usuario no autenticado, redirigir al login
-            httpResponse.sendRedirect(contextPath + "/index.html");
+            httpResponse.sendRedirect(contextPath + "/index.jsp");
             return;
         }
         
