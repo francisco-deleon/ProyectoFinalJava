@@ -9,19 +9,15 @@ import java.sql.SQLException;
  */
 public class DatabaseConnection {
     
-    // Variables de entorno para configuración de base de datos
-    private static final String DB_HOST = System.getenv("DB_HOST") != null ?
-        System.getenv("DB_HOST") : "localhost";
-    private static final String DB_PORT = System.getenv("DB_PORT") != null ?
-        System.getenv("DB_PORT") : "3306";
-    private static final String DB_NAME = System.getenv("DB_NAME") != null ?
-        System.getenv("DB_NAME") : "sistema_empresa";
-    private static final String URL = "jdbc:mysql://" + DB_HOST + ":" + DB_PORT + "/" + DB_NAME;
-    private static final String USERNAME = System.getenv("DB_USERNAME") != null ?
-        System.getenv("DB_USERNAME") : "root";
-    private static final String PASSWORD = System.getenv("DB_PASSWORD") != null ?
-        System.getenv("DB_PASSWORD") : "admin";
-    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+  // Variables de entorno para configuración de base de datos
+  private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+  private static final String USERNAME = System.getenv("DB_USERNAME") != null ? System.getenv("DB_USERNAME") : "usr_empresa";
+  private static final String PASSWORD = System.getenv("DB_PASSWORD") != null ? System.getenv("DB_PASSWORD") : "Empresa@123-2025";
+  private static final String DB_HOST = System.getenv("DB_HOST") != null ? System.getenv("DB_HOST") : "localhost";
+  private static final String DB_NAME = System.getenv("DB_NAME") != null ? System.getenv("DB_NAME") : "sistema_empresa";
+  private static final String DB_PORT = System.getenv("DB_PORT") != null ? System.getenv("DB_PORT") : "3307";
+  //private static final String URL = "jdbc:mysql://" + DB_HOST + ":" + DB_PORT + "/" + DB_NAME;
+  private static final String URL = String.format("jdbc:mysql://%s:%s/%s?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", DB_HOST, DB_PORT, DB_NAME);
     
     static {
         try {
