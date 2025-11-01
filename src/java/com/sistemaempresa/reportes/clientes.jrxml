@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empleados" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8163ab95-b48f-4280-b8ba-e7a661d9da50">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="clientes" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8163ab95-b48f-4280-b8ba-e7a661d9da50">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -87,64 +87,48 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<subDataset name="ds_TablaEmpleados" uuid="787f3f7f-0030-429e-b2b6-6ec7e560a199">
+	<subDataset name="ds_TablaClientes" uuid="787f3f7f-0030-429e-b2b6-6ec7e560a199">
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sistema Empresa"/>
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<queryString language="SQL">
-			<![CDATA[SELECT e.idEmpleado AS id, CONCAT(e.nombres, ' ', e.apellidos) AS nombre_empleado , p.puesto, e.direccion, e.telefono, e.DPI, IF(e.genero, 'Masculino', 'Femenino') AS genero_emp, e.fecha_nacimiento, e.fecha_inicio_labores, e.fechaingreso FROM empleados AS e
-JOIN puestos as p ON e.idPuesto = p.idPuesto]]>
+			<![CDATA[SELECT c.idCliente AS id, CONCAT(c.nombres, ' ', c.apellidos) AS nombre_cliente, c.telefono, c.NIT, c.correo_electronico, IF(c.genero, 'Masculino', 'Femenino') AS genero_cl, c.fechaingreso FROM clientes AS c]]>
 		</queryString>
 		<field name="id" class="java.lang.Integer">
-			<property name="com.jaspersoft.studio.field.name" value="idEmpleado"/>
+			<property name="com.jaspersoft.studio.field.name" value="idCliente"/>
 			<property name="com.jaspersoft.studio.field.label" value="id"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
 		</field>
-		<field name="nombre_empleado" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="nombre_empleado"/>
-			<property name="com.jaspersoft.studio.field.label" value="nombre_empleado"/>
-		</field>
-		<field name="puesto" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="puesto"/>
-			<property name="com.jaspersoft.studio.field.label" value="puesto"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="puestos"/>
-		</field>
-		<field name="direccion" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="direccion"/>
-			<property name="com.jaspersoft.studio.field.label" value="direccion"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
+		<field name="nombre_cliente" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre_cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre_cliente"/>
 		</field>
 		<field name="telefono" class="java.lang.String">
 			<property name="com.jaspersoft.studio.field.name" value="telefono"/>
 			<property name="com.jaspersoft.studio.field.label" value="telefono"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
 		</field>
-		<field name="DPI" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="DPI"/>
-			<property name="com.jaspersoft.studio.field.label" value="DPI"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
+		<field name="NIT" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="NIT"/>
+			<property name="com.jaspersoft.studio.field.label" value="NIT"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
 		</field>
-		<field name="genero_emp" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="genero_emp"/>
-			<property name="com.jaspersoft.studio.field.label" value="genero_emp"/>
+		<field name="correo_electronico" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="correo_electronico"/>
+			<property name="com.jaspersoft.studio.field.label" value="correo_electronico"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
 		</field>
-		<field name="fecha_nacimiento" class="java.sql.Date">
-			<property name="com.jaspersoft.studio.field.name" value="fecha_nacimiento"/>
-			<property name="com.jaspersoft.studio.field.label" value="fecha_nacimiento"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
-		</field>
-		<field name="fecha_inicio_labores" class="java.sql.Date">
-			<property name="com.jaspersoft.studio.field.name" value="fecha_inicio_labores"/>
-			<property name="com.jaspersoft.studio.field.label" value="fecha_inicio_labores"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
+		<field name="genero_cl" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="genero_cl"/>
+			<property name="com.jaspersoft.studio.field.label" value="genero_cl"/>
 		</field>
 		<field name="fechaingreso" class="java.sql.Timestamp">
 			<property name="com.jaspersoft.studio.field.name" value="fechaingreso"/>
 			<property name="com.jaspersoft.studio.field.label" value="fechaingreso"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
 		</field>
 	</subDataset>
 	<parameter name="TITULO_REPORTE" class="java.lang.String">
-		<defaultValueExpression><![CDATA["REPORTE DE EMPLEADOS AL 31/10/2025"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["REPORTE DE CLIENTES AL 31/10/2025"]]></defaultValueExpression>
 	</parameter>
 	<queryString language="SQL">
 		<![CDATA[SELECT p.idProducto AS id, p.producto, m.marca, p.precio_costo, p.precio_venta, p.existencia AS stock, p.fecha_ingreso FROM productos AS p
@@ -214,7 +198,7 @@ JOIN marcas AS m ON p.idMarca = m.idMarca]]>
 					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="ds_TablaEmpleados" uuid="ebcc6315-b301-4d3c-9cf4-de2361650883">
+					<datasetRun subDataset="ds_TablaClientes" uuid="ebcc6315-b301-4d3c-9cf4-de2361650883">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
 					<jr:column width="22" uuid="43b2aafb-d497-451d-8c94-e0930d18ebb3">
@@ -236,22 +220,22 @@ JOIN marcas AS m ON p.idMarca = m.idMarca]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="178" uuid="56646df7-e1e5-4cf7-922b-adeceb4419e5">
+					<jr:column width="196" uuid="56646df7-e1e5-4cf7-922b-adeceb4419e5">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="178" height="30" uuid="28d56ff1-9af4-43af-b513-ca285c150fb9"/>
+								<reportElement x="0" y="0" width="196" height="30" uuid="28d56ff1-9af4-43af-b513-ca285c150fb9"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[Nombre del Empleado]]></text>
+								<text><![CDATA[Nombre del Cliente]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="178" height="30" uuid="e5f02c5d-a3ab-4953-a9d4-c1b14f22eafe"/>
+								<reportElement x="0" y="0" width="196" height="30" uuid="e5f02c5d-a3ab-4953-a9d4-c1b14f22eafe"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{nombre_empleado}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{nombre_cliente}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -263,52 +247,52 @@ JOIN marcas AS m ON p.idMarca = m.idMarca]]>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[Puesto]]></text>
+								<text><![CDATA[Telefono]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="80" height="30" uuid="52b38285-337f-41ad-aca4-26be64425009"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{puesto}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="150" uuid="4f5cbc73-805b-4a67-993a-fe5240532686">
+					<jr:column width="90" uuid="4f5cbc73-805b-4a67-993a-fe5240532686">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="150" height="30" uuid="63feafe8-33c8-488b-bacd-9e801aaeef9d"/>
+								<reportElement x="0" y="0" width="90" height="30" uuid="63feafe8-33c8-488b-bacd-9e801aaeef9d"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[Direccion]]></text>
+								<text><![CDATA[NIT]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="150" height="30" uuid="1b2e8c07-2578-4006-a506-9212469df9f9"/>
+								<reportElement x="0" y="0" width="90" height="30" uuid="1b2e8c07-2578-4006-a506-9212469df9f9"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{NIT}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="70" uuid="6f2f048b-03fd-4c98-9002-166f1ed1020b">
+					<jr:column width="180" uuid="6f2f048b-03fd-4c98-9002-166f1ed1020b">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="70" height="30" uuid="dd4d30d6-ea6b-40bc-a6fd-7b7378083fc9"/>
+								<reportElement x="0" y="0" width="180" height="30" uuid="dd4d30d6-ea6b-40bc-a6fd-7b7378083fc9"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[Telefono]]></text>
+								<text><![CDATA[Correo Electrónico]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="70" height="30" uuid="17240a37-f65a-469d-b95c-c771afa4216c"/>
+								<reportElement x="0" y="0" width="180" height="30" uuid="17240a37-f65a-469d-b95c-c771afa4216c"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{correo_electronico}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -320,41 +304,22 @@ JOIN marcas AS m ON p.idMarca = m.idMarca]]>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[DPI]]></text>
+								<text><![CDATA[Género]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="88" height="30" uuid="f388dc65-63ed-4f0d-b3af-79501f826d87"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{DPI}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{genero_cl}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="76" uuid="46efe00b-24e1-4fe4-a870-1efe35ef4fad">
+					<jr:column width="124" uuid="7be3229d-1113-47a3-a2f3-6e826d4f2db1">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="76" height="30" uuid="e3cc5a03-df8d-4a64-99a0-439c1fb623d0"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font isBold="true"/>
-								</textElement>
-								<text><![CDATA[Genero]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="Table_TD" height="30">
-							<textField>
-								<reportElement x="0" y="0" width="76" height="30" uuid="5c3b057a-45f2-4bfc-ba22-89f4cbbcb79b"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{genero_emp}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="104" uuid="7be3229d-1113-47a3-a2f3-6e826d4f2db1">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
-						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement x="0" y="0" width="104" height="30" uuid="3c02b442-ccd7-4a96-927e-290c9cf7fe0b">
+								<reportElement x="0" y="0" width="124" height="30" uuid="3c02b442-ccd7-4a96-927e-290c9cf7fe0b">
 									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 								</reportElement>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -364,8 +329,8 @@ JOIN marcas AS m ON p.idMarca = m.idMarca]]>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
-							<textField pattern="dd/MM/yy HH:mm">
-								<reportElement x="0" y="0" width="104" height="30" uuid="fbdf4c63-a2d7-4bea-b2cb-3f443e56dcb0"/>
+							<textField pattern="dd/MM/yyyy HH:mm">
+								<reportElement x="0" y="0" width="124" height="30" uuid="fbdf4c63-a2d7-4bea-b2cb-3f443e56dcb0"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
 								<textFieldExpression><![CDATA[$F{fechaingreso}]]></textFieldExpression>
 							</textField>

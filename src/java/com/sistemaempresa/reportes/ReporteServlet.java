@@ -43,13 +43,13 @@ public class ReporteServlet extends HttpServlet {
       System.out.println("Tipo: " + tipoReporte);
       String fechaReporte = formatoFechaReporte.format(now);
       
-      // 2. Determinar qué reporte generar
+      // 1. Determinar qué reporte generar
       plantillaReporte = tipoReporte + ".jrxml";
-      nombreArchivo = "reporte_" + tipoReporte + fechaReporte + ".pdf";
+      nombreArchivo = "reporte_" + tipoReporte + "_" + fechaReporte + ".pdf";
       tituloReporte = "REPORTE DE " + tipoReporte.toUpperCase() + " AL " + formatoFechaTitulo.format(now);
       
       try {
-      // 1. Obtener conexión
+      // 2. Obtener conexión
       conn = DatabaseConnection.getConnection();
       System.out.println("Conexión BD: " + (conn != null ? "OK" : "ERROR"));
 

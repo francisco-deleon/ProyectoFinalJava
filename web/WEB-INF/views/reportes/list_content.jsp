@@ -58,7 +58,6 @@
         </div>
     </div>
 
-    <!-- Reporte de Ventas - EN DESARROLLO -->
     <div class="col-md-6 col-lg-4 mb-4">
         <div class="card report-card h-100 opacity-75">
             <div class="card-body text-center">
@@ -69,14 +68,13 @@
                 <p class="report-description">
                     Análisis detallado de ventas por período, cliente y producto.
                 </p>
-                <button class="btn btn-info btn-generate" disabled>
-                    <i class="fas fa-clock me-2"></i>En Desarrollo
+                <button class="btn btn-info btn-generate" onclick="generarReporte('ventas')">
+                    <i class="fas fa-download me-2"></i>Descargar PDF
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Reporte de Compras - EN DESARROLLO -->
     <div class="col-md-6 col-lg-4 mb-4">
         <div class="card report-card h-100 opacity-75">
             <div class="card-body text-center">
@@ -87,8 +85,8 @@
                 <p class="report-description">
                     Análisis de compras por período, proveedor y producto.
                 </p>
-                <button class="btn btn-warning btn-generate" disabled>
-                    <i class="fas fa-clock me-2"></i>En Desarrollo
+                <button class="btn btn-warning btn-generate" onclick="generarReporte('compras')">
+                    <i class="fas fa-download me-2"></i>Descargar PDF
                 </button>
             </div>
         </div>
@@ -111,7 +109,6 @@
         </div>
     </div>
 
-    <!-- Reporte de Clientes - EN DESARROLLO -->
     <div class="col-md-6 col-lg-4 mb-4">
         <div class="card report-card h-100 opacity-75">
             <div class="card-body text-center">
@@ -122,8 +119,8 @@
                 <p class="report-description">
                     Listado de clientes con información de contacto y compras.
                 </p>
-                <button class="btn btn-danger btn-generate" disabled>
-                    <i class="fas fa-clock me-2"></i>En Desarrollo
+                <button class="btn btn-danger btn-generate" onclick="generarReporte('clientes')">
+                    <i class="fas fa-download me-2"></i>Descargar PDF
                 </button>
             </div>
         </div>
