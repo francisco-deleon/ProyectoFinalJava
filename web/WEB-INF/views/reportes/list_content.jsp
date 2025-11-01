@@ -94,7 +94,6 @@
         </div>
     </div>
 
-    <!-- Reporte de Empleados - EN DESARROLLO -->
     <div class="col-md-6 col-lg-4 mb-4">
         <div class="card report-card h-100 opacity-75">
             <div class="card-body text-center">
@@ -105,8 +104,8 @@
                 <p class="report-description">
                     Información completa de todos los empleados registrados.
                 </p>
-                <button class="btn btn-success btn-generate" disabled>
-                    <i class="fas fa-clock me-2"></i>En Desarrollo
+                <button class="btn btn-success btn-generate" onclick="generarReporte('empleados')">
+                    <i class="fas fa-download me-2"></i>Descargar PDF
                 </button>
             </div>
         </div>
@@ -145,7 +144,7 @@
         });
 
         // Redirigir a ReporteServlet con el tipo de reporte
-        window.location.href = 'ReporteServlet?tipo=' + tipo;
+        window.location.href = 'jasper-report?tipo=' + tipo;
 
         // Cerrar el modal después de 2 segundos
         setTimeout(() => {
